@@ -4,14 +4,14 @@ from matplotlib.gridspec import GridSpec
 
 # # # #  año 2025 sin dist
 inner_labels = ['Norte', 'Centro', 'Oriente', 'Sur', 'Pando']
-inner_sizes_1 = [618.8,1738.3,1444.3,639,65.8]
+inner_sizes_1 = [619.1,1738.5,1444.8,639.1,65.8]
 inner_colors = ['lightgrey', 'lightgrey', 'lightgrey','lightgrey','lightgrey']
 
-outer_labels = ['TG','TV','Motor','Solar','Hidro',
-'TG','CC','Solar','Eolica','Hidro',
-'TG','TV','CC','Solar','Eolica' ,
-'TG','CC','Solar','Hidro',
-'Motor']
+outer_labels = ['TG','TV','Motor','Solar','Solar Dist.','Hidro',
+'TG','CC','Solar','Solar Dist.','Eolica','Hidro',
+'TG','TV','CC','Solar','Solar Dist.','Eolica' ,
+'TG','CC','Solar','Solar Dist.','Hidro',
+'Motor','Solar Dist.']
 '''
 TG  #36495A
 TV Black
@@ -21,28 +21,28 @@ solar  #FBAA1B
 Eolico #8FC73E
 Hidro #207653
 '''
-outer_sizes_1 = [50.3,15,37.8,120,395.7,
-419.8,480,100,27,711.5,
-235,84.3,736,20,369,
-36.2,508.5,66.4,27.9,
-65.8]
+outer_sizes_1 = [50.3,15,37.8,120,0.3,395.7,
+419.8,480,100,0.2,27,711.5,
+235,84.3,736,20,0.5,369,
+36.2,508.5,66.4,0.1,27.9,
+65.8,0]
 
-outer_colors = ['#36495A','black','#6D6F70','#FBAA1B','#207653',
-'#36495A','#A1140B' ,'#FBAA1B','#8FC73E','#207653',
-'#36495A','black','#A1140B','#FBAA1B','#8FC73E', 
-'#36495A','#A1140B','#FBAA1B','#207653',
-'#6D6F70']
+outer_colors = ['#36495A','black','#6D6F70','#FBAA1B','#FBAA1B','#207653',
+'#36495A','#A1140B' ,'#FBAA1B','#FBAA1B','#8FC73E','#207653',
+'#36495A','black','#A1140B','#FBAA1B','#FBAA1B','#8FC73E', 
+'#36495A','#A1140B','#FBAA1B','#FBAA1B','#207653',
+'#6D6F70','#FBAA1B']
 
 # # # #  año 2050 sin dist
 inner_labels = ['Norte', 'Centro', 'Oriente', 'Sur', 'Pando']
-inner_sizes_2 = [775,1936.3,1580.3,640.8,65.8]
+inner_sizes_2 = [802.5,1955.5,1623.3,651.5,66.8]
 inner_colors = ['lightgrey', 'lightgrey', 'lightgrey','lightgrey','lightgrey']
 
-outer_labels = ['TG','TV','Motor','Solar','Hidro',
-'TG','CC','Solar','Eolica','Hidro',
-'TG','TV','CC','Solar','Eolica' ,
-'TG','CC','Solar','Hidro',
-'Motor']
+outer_labels = ['TG','TV','Motor','Solar','Solar Dist.','Hidro',
+'TG','CC','Solar','Solar Dist.','Eolica','Hidro',
+'TG','TV','CC','Solar','Solar Dist.','Eolica' ,
+'TG','CC','Solar','Solar Dist.','Hidro',
+'Motor','Solar Dist.']
 '''
 TG  #36495A
 TV Black
@@ -52,17 +52,17 @@ solar  #FBAA1B
 Eolico #8FC73E
 Hidro #207653
 '''
-outer_sizes_2 = [87.5,15,37.8,120,514.7,
-419.8,480,298,27,711.5,
-371,84.3,736,20,369,
-38,508.5,66.4,27.9,
-65.8]
+outer_sizes_2 = [87.5,15,37.8,120,27.5,514.7,
+419.8,480,298,19.2,27,711.5,
+371,84.3,736,20,42.9,369,
+38,508.5,66.4,10.6,27.9,
+65.8,1]
 
-outer_colors = ['#36495A','black','#6D6F70','#FBAA1B','#207653',
-'#36495A','#A1140B' ,'#FBAA1B','#8FC73E','#207653',
-'#36495A','black','#A1140B','#FBAA1B','#8FC73E', 
-'#36495A','#A1140B','#FBAA1B','#207653',
-'#6D6F70']
+outer_colors = ['#36495A','black','#6D6F70','#FBAA1B','#FBAA1B','#207653',
+'#36495A','#A1140B' ,'#FBAA1B','#FBAA1B','#8FC73E','#207653',
+'#36495A','black','#A1140B','#FBAA1B','#FBAA1B','#8FC73E', 
+'#36495A','#A1140B','#FBAA1B','#FBAA1B','#207653',
+'#6D6F70','#FBAA1B']
 
 # # # #  año 2050 con dist
 inner_labels = ['Norte', 'Centro', 'Oriente', 'Sur', 'Pando']
@@ -103,13 +103,13 @@ hatch_patterns = ['', '', '', '', '/', '',
 
 # ~ fig, (ax1,ax2) = plt.subplots(1,2,figsize=(20, 15))
 fig = plt.figure(figsize=(24, 12))
-gs = GridSpec(1, 3, figure=fig, width_ratios=[1,1.056,1.153])
+gs = GridSpec(1, 3, figure=fig, width_ratios=[1,1.063,1.153])
 
 # 2025 sin dist
 ax1 = fig.add_subplot(gs[0, 0])
 ax1.pie(outer_sizes_1, labels=outer_labels, colors=outer_colors,
        autopct='%1.1f%%', startangle=90, radius=1.3,
-       wedgeprops=dict(width=0.4, edgecolor='white'),labeldistance=1.1,textprops=dict(color="black", fontsize=16))
+       wedgeprops=dict(width=0.4, edgecolor='white'),labeldistance=1.1,textprops=dict(color="black", fontsize=16), hatch=hatch_patterns)
 ax1.pie(inner_sizes_1, labels=inner_labels, colors=inner_colors,
        autopct='%1.1f%%', startangle=90, radius=0.9,
        wedgeprops=dict(width=0.8, edgecolor='white'),  labeldistance=0.5,textprops=dict(color="w", fontsize=16))
@@ -119,7 +119,7 @@ ax1.pie(inner_sizes_1, labels=inner_labels, colors=inner_colors,
 ax2 = fig.add_subplot(gs[0, 1])
 ax2.pie(outer_sizes_2, labels=outer_labels, colors=outer_colors,
        autopct='%1.1f%%', startangle=90, radius=1.3,
-       wedgeprops=dict(width=0.4, edgecolor='white'),labeldistance=1.1,textprops=dict(color="black", fontsize=16))
+       wedgeprops=dict(width=0.4, edgecolor='white'),labeldistance=1.1,textprops=dict(color="black", fontsize=16), hatch=hatch_patterns)
 ax2.pie(inner_sizes_2, labels=inner_labels, colors=inner_colors,
        autopct='%1.1f%%', startangle=90, radius=0.9,
        wedgeprops=dict(width=0.8, edgecolor='white'),  labeldistance=0.5,textprops=dict(color="w", fontsize=16))
@@ -142,8 +142,8 @@ ax3.legend( outer_labels_3, title="Tecnología",  loc="center left", bbox_to_anc
 # ~ ax2.axis('equal')
 
 # ~ ax1.axis('equal')
-ax1.set_title('Escenario Tendencial \n 2025 (4506 MW)', fontsize=24, fontweight='bold')
-ax2.set_title('Escenario Tendencial \n 2050 (4998 MW)', fontsize=24, fontweight='bold')
+ax1.set_title('Escenario Tendencial \n 2025 (4507 MW)', fontsize=24, fontweight='bold')
+ax2.set_title('Escenario Tendencial \n 2050 (5099 MW)', fontsize=24, fontweight='bold')
 ax3.set_title('Escenario Tendencial \n +Distribuida \n 2050 (6010 MW)', fontsize=24, fontweight='bold')
 
 plt.tight_layout()
