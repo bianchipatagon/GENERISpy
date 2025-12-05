@@ -1,0 +1,150 @@
+import matplotlib.pyplot as plt
+import numpy as np
+from matplotlib.gridspec import GridSpec
+
+# # # #  año 2025 sin dist
+inner_labels = ['Norte', 'Centro', 'Oriente', 'Sur', 'Pando']
+inner_sizes_1 = [619.1,1738.5,1444.8,639.1,65.8]
+inner_colors = ['lightgrey', 'lightgrey', 'lightgrey','lightgrey','lightgrey']
+
+outer_labels = ['Fósil','Solar','Solar Dist.','Hidro',
+'Fósil','Solar','Solar Dist.','Eolica','Hidro',
+'Fósil','Solar','Solar Dist.','Eolica' ,
+'Fósil','Solar','Solar Dist.','Hidro',
+'Fósil','Solar Dist.']
+'''
+TG  #36495A
+TV Black
+motor #6D6F70
+CC #A1140B 
+solar  #FBAA1B
+Eolico #8FC73E
+Hidro #207653
+'''
+outer_sizes_1 = [103.1,120,0.3,395.7,
+899.8,100,0.2,27,711.5,
+1055.3,20,0.5,369,
+544.7,66.4,0.1,27.9,
+65.8,0]
+
+outer_colors = ['#6D6F70','#FBAA1B','#FBAA1B','#207653',
+'#6D6F70' ,'#FBAA1B','#FBAA1B','#8FC73E','#207653',
+'#6D6F70','#FBAA1B','#FBAA1B','#8FC73E', 
+'#6D6F70','#FBAA1B','#FBAA1B','#207653',
+'#6D6F70','#FBAA1B']
+
+# # # #  año 2050 sin dist
+inner_labels = ['Norte', 'Centro', 'Oriente', 'Sur', 'Pando']
+inner_sizes_2 = [802.5,1955.5,1623.3,651.5,66.8]
+inner_colors = ['lightgrey', 'lightgrey', 'lightgrey','lightgrey','lightgrey']
+
+outer_labels = ['Fósil','Solar','Solar Dist.','Hidro',
+'Fósil','Solar','Solar Dist.','Eolica','Hidro',
+'Fósil','Solar','Solar Dist.','Eolica' ,
+'Fósil','Solar','Solar Dist.','Hidro',
+'Fósil','Solar Dist.']
+'''
+TG  #36495A
+TV Black
+motor #6D6F70
+CC #A1140B 
+solar  #FBAA1B
+Eolico #8FC73E
+Hidro #207653
+'''
+outer_sizes_2 = [140.3,120,27.5,514.7,
+899.8,298,19.2,27,711.5,
+1191.3,20,42.9,369,
+546.5,66.4,10.6,27.9,
+65.8,1]
+
+outer_colors = ['#6D6F70','#FBAA1B','#FBAA1B','#207653',
+'#6D6F70' ,'#FBAA1B','#FBAA1B','#8FC73E','#207653',
+'#6D6F70','#FBAA1B','#FBAA1B','#8FC73E', 
+'#6D6F70','#FBAA1B','#FBAA1B','#207653',
+'#6D6F70','#FBAA1B']
+
+# # # #  año 2050 con dist
+inner_labels = ['Norte', 'Centro', 'Oriente', 'Sur', 'Pando']
+inner_sizes_3 = [1050.6, 2127.9,2008.8,747.4,75.8]
+inner_colors = ['lightgrey', 'lightgrey', 'lightgrey','lightgrey','lightgrey']
+
+outer_labels_3 = ['Fósil','Solar','Solar Dist.','Hidro',
+'Fósil','Solar','Solar Dist.','Eolica','Hidro',
+'Fósil','Solar','Solar Dist.','Eolica' ,
+'Fósil','Solar','Solar Dist.','Hidro',
+'Fósil','Solar Dist.']
+'''
+TG  #36495A
+TV Black
+motor #6D6F70
+CC #A1140B 
+solar  #FBAA1B
+Eolico #8FC73E
+Hidro #207653
+'''
+outer_sizes_3 = [140.4,120,275.5,514.7,
+899.8,298,191.6,27,711.5,
+1191.3,20,428.5,369,
+546.5,66.4,106.5,27.9,
+65.8,10]
+
+outer_colors_3 = ['#6D6F70','#FBAA1B','#FBAA1B','#207653',
+'#6D6F70' ,'#FBAA1B','#FBAA1B','#8FC73E','#207653',
+'#6D6F70','#FBAA1B','#FBAA1B','#8FC73E', 
+'#6D6F70','#FBAA1B','#FBAA1B','#207653',
+'#6D6F70','#FBAA1B']
+
+hatch_patterns = ['', '', '/', '',
+ '', '', '/', '', '',
+'', '', '/', '',
+'', '', '/', '', 
+'','/']
+
+# ~ fig, (ax1,ax2) = plt.subplots(1,2,figsize=(20, 15))
+fig = plt.figure(figsize=(24, 12))
+gs = GridSpec(1, 3, figure=fig, width_ratios=[1,1.063,1.153])
+
+# 2025 sin dist
+ax1 = fig.add_subplot(gs[0, 0])
+ax1.pie(outer_sizes_1, labels=outer_labels, colors=outer_colors,
+       autopct='%1.1f%%', startangle=90, radius=1.3,
+       wedgeprops=dict(width=0.4, edgecolor='white'),labeldistance=1.1,textprops=dict(color="black", fontsize=16), hatch=hatch_patterns)
+ax1.pie(inner_sizes_1, labels=inner_labels, colors=inner_colors,
+       autopct='%1.1f%%', startangle=90, radius=0.9,
+       wedgeprops=dict(width=0.8, edgecolor='white'),  labeldistance=0.5,textprops=dict(color="w", fontsize=16))
+       
+# 2050 sin dist
+
+ax2 = fig.add_subplot(gs[0, 1])
+ax2.pie(outer_sizes_2, labels=outer_labels, colors=outer_colors,
+       autopct='%1.1f%%', startangle=90, radius=1.3,
+       wedgeprops=dict(width=0.4, edgecolor='white'),labeldistance=1.1,textprops=dict(color="black", fontsize=16), hatch=hatch_patterns)
+ax2.pie(inner_sizes_2, labels=inner_labels, colors=inner_colors,
+       autopct='%1.1f%%', startangle=90, radius=0.9,
+       wedgeprops=dict(width=0.8, edgecolor='white'),  labeldistance=0.5,textprops=dict(color="w", fontsize=16))
+
+# 2050 con dist
+
+ax3 = fig.add_subplot(gs[0, 2])
+ax3.pie(outer_sizes_3, labels=outer_labels_3, colors=outer_colors_3,
+       autopct='%1.1f%%', startangle=90, radius=1.3,
+       wedgeprops=dict(width=0.4, edgecolor='white'),labeldistance=1.1,textprops=dict(color="black", fontsize=16), hatch=hatch_patterns)
+ax3.pie(inner_sizes_3, labels=inner_labels, colors=inner_colors,
+       autopct='%1.1f%%', startangle=90, radius=0.9,
+       wedgeprops=dict(width=0.8, edgecolor='white'),  labeldistance=0.5,textprops=dict(color="w", fontsize=16))
+ax3.legend( outer_labels_3, title="Tecnología",  loc="center left", bbox_to_anchor=(1, 0, 0.5, 1), fontsize=16)
+# Add a circle at the center to make it look like a donut
+# ~ centre_circle = plt.Circle((0, 0), 0.5, fc='white')
+# ~ fig.gca().add_artist(centre_circle)
+
+# Equal aspect ratio ensures circular pie
+# ~ ax2.axis('equal')
+
+# ~ ax1.axis('equal')
+ax1.set_title('Escenario Tendencial \n 2025 (4507 MW)', fontsize=24, fontweight='bold')
+ax2.set_title('Escenario Tendencial \n 2050 (5099 MW)', fontsize=24, fontweight='bold')
+ax3.set_title('Escenario Tendencial \n +Distribuida \n 2050 (6010 MW)', fontsize=24, fontweight='bold')
+
+plt.tight_layout()
+plt.savefig('TendencialPot.svg', dpi=300, bbox_inches="tight")

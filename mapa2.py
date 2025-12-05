@@ -63,12 +63,19 @@ ax.plot([lon2, lon5], [lat2, lat5], color='midnightblue', linewidth=2, label = '
 ax.plot([lon2, lon3], [lat2, lat3], color='midnightblue', linewidth=0.35, label = 'L5 - 35 MW') #oriente-norte
 ax.plot([lon1, lon3], [lat6, lat7], color='midnightblue', linewidth=5, label = 'L6 - 500 MW') #oriente-norte
 ax.tick_params(axis='both', labelsize=0, color='white')
+# ~ ax.text(-66,-20, 'Sur',labelsize=10, color='white' )
+ax.text(-66,-21, 'Sur',fontsize=20, weight = 'bold', color='white')
+ax.text(-62,-18, 'Oriente',fontsize=20, weight = 'bold', color='white')
+ax.text(-66,-14, 'Norte',fontsize=20, weight = 'bold', color='white')
+ax.text(-68.7,-11.7, 'Pando',fontsize=20, weight = 'bold', color='white')
+ax.text(-68.7,-19, 'Centro',fontsize=20, weight = 'bold', color='white')
+
 # ~ ax.set_yticks([-10, -14, -18, -22])
 # ~ ax.set_xticks([-68, -64, -60])
 # ~ ax.set_ylabel('lat [°]', fontsize=24)
 # ~ ax.set_xlabel('lon [°]', fontsize=24)
 
-plt.legend(loc='upper right', fontsize = 15,frameon=False) 
+# ~ plt.legend(loc='upper right', fontsize = 15,frameon=False) 
 
 # ~ Bolivia.plot(ax=ax, color=Bolivia['color'], linewidth=0, alpha=0.7,edgecolor='ivory')
 Sur.plot(ax=ax, color='lightsteelblue', linewidth=4, alpha=0.7,edgecolor='white')
