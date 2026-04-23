@@ -33,7 +33,6 @@ awet40 = alt40.iloc[12:24]
 adry50 = alt50.iloc[0:12]
 awet50 = alt50.iloc[12:24]
 
-
 fig, axs = plt.subplots(3,4,figsize=(14,8),sharex=True, sharey=True)
 
 #################### TENDENCIAL ###############################
@@ -49,7 +48,7 @@ axs[0,0].bar(tdry30['hora'], tdry30['Fosiln'], color='#A1140B')
 axs[0,0].bar(tdry30['hora'], tdry30['Solarn'], bottom=tdry30['Fosiln'], color='#FBAA1B')
 axs[0,0].bar(tdry30['hora'], tdry30['Eolican'],bottom= tdry30['Fosiln']+tdry30['Solarn'], color='#8FC73E')
 axs[0,0].bar(tdry30['hora'], tdry30['Hidron'], bottom=tdry30['Fosiln']+tdry30['Solarn']+tdry30['Eolican'], color='#207653')
-axs[0,0].set_ylim(-750, 200)
+axs[0,0].set_ylim(-750, 300)
 axs[0,0].set_title('Estación seca \n (may-oct)', fontsize = 16)
 axs[0,0].yaxis.set_tick_params(labelsize=12)
 axs[0,0].xaxis.set_tick_params(labelsize=12, rotation=90)
@@ -85,9 +84,7 @@ axs[1,0].axhline(linewidth=1, color='black')
 
 ##negativos
 axs[1,0].bar(tdry40['hora'], tdry40['Fosiln'], color='#A1140B')
-axs[1,0].bar(tdry40['hora'], tdry40['Solarn'], bottom=tdry30['Fosiln'], color='#FBAA1B')
-axs[1,0].bar(tdry40['hora'], tdry40['Eolican'], bottom=tdry30['Fosiln']+tdry40['Solarn'], color='#8FC73E')
-axs[1,0].bar(tdry40['hora'], tdry40['Hidron'], bottom=tdry30['Fosiln']+tdry40['Solarn']+tdry40['Eolican'], color='#207653')
+axs[1,0].bar(tdry40['hora'], tdry40['Hidron'], bottom=tdry40['Fosiln'], color='#207653')
 # ~ axs[1,0].set_ylim(-650, 200)
 # ~ axs[1,0].set_title('Estación seca \n (may-oct)', fontsize = 16)
 axs[1,0].yaxis.set_tick_params(labelsize=12)
@@ -116,7 +113,7 @@ axs[1,1].text(9,-600,'2040',fontsize=12,weight='bold')
 
 ##negativos
 axs[2,0].bar(tdry50['hora'], tdry50['Fosiln'], color='#A1140B')
-axs[2,0].bar(tdry50['hora'], tdry50['Solar'], bottom=tdry40['Fosiln'], color='#FBAA1B')
+axs[2,0].bar(tdry50['hora'], tdry50['Hidron'], bottom=tdry50['Fosiln'], color='#207653')
 # ~ axs[2,0].set_ylim(-650, 200)
 # ~ axs[2,0].set_title('Estación seca \n (may-oct)', fontsize = 16)
 axs[2,0].yaxis.set_tick_params(labelsize=12)
@@ -129,7 +126,7 @@ axs[2,0].bar(tdry50['hora'], tdry50['Fosil'], color='#A1140B')
 
 ##positivos
 axs[2,1].bar(twet50['hora'], twet50['Fosiln'], color='#A1140B')
-axs[2,1].bar(twet50['hora'], twet50['Solar'], bottom=tdry40['Fosiln'], color='#FBAA1B')
+axs[2,1].bar(twet50['hora'], twet50['Hidron'], bottom=twet50['Fosiln'], color='#207653')
 # ~ axs[2,1].set_title('Estación húmeda \n (nov-abr)', fontsize = 16)
 axs[2,1].xaxis.set_tick_params(labelsize=12, rotation=90)
 axs[2,1].set_xlabel('horas', fontsize=14)
@@ -189,9 +186,9 @@ axs[1,2].axhline(linewidth=1, color='black')
 
 ##negativos
 axs[1,2].bar(adry40['hora'], adry40['Fosiln'], color='#A1140B')
-axs[1,2].bar(adry40['hora'], adry40['Solarn'], bottom=adry30['Fosiln'], color='#FBAA1B')
-axs[1,2].bar(adry40['hora'], adry40['Eolican'], bottom=adry30['Fosiln']+adry40['Solarn'], color='#8FC73E')
-axs[1,2].bar(adry40['hora'], adry40['Hidron'], bottom=adry30['Fosiln']+adry40['Solarn']+adry40['Eolican'], color='#207653')
+axs[1,2].bar(adry40['hora'], adry40['Solarn'], bottom=adry40['Fosiln'], color='#FBAA1B')
+axs[1,2].bar(adry40['hora'], adry40['Eolican'], bottom=adry40['Fosiln']+adry40['Solarn'], color='#8FC73E')
+axs[1,2].bar(adry40['hora'], adry40['Hidron'], bottom=adry40['Fosiln']+adry40['Solarn']+adry40['Eolican'], color='#207653')
 # ~ axs[1,2].set_ylim(-650, 200)
 # ~ axs[1,0].set_title('Estación seca \n (may-oct)', fontsize = 16)
 axs[1,2].yaxis.set_tick_params(labelsize=12)
@@ -208,7 +205,7 @@ axs[1,3].bar(awet40['hora'], awet40['Hidron'], bottom= awet40['Fosiln']+awet40['
 axs[1,3].bar(awet40['hora'], awet40['Fosil'], color='#A1140B')
 axs[1,3].bar(awet40['hora'], awet40['Solar'], bottom=awet40['Fosil'], color='#FBAA1B')
 axs[1,3].bar(awet40['hora'], awet40['Eolica'], bottom=awet40['Fosil']+awet40['Solar'], color='#8FC73E')
-axs[1,3].bar(awet40['hora'], awet40['Hidro'], bottom= tdry40['Fosil']+tdry40['Solar']+tdry40['Eolica'], color='#207653')
+axs[1,3].bar(awet40['hora'], awet40['Hidro'], bottom= awet40['Fosil']+awet40['Solar']+awet40['Eolica'], color='#207653')
 axs[1,3].axhline(linewidth=1, color='black', label='_nolegend_')
 axs[1,3].legend(["Fosil", "Solar","Eólica","Hidro"], frameon=False,bbox_to_anchor=(1.05, 2), loc='upper left', borderaxespad=0.,fontsize=14)
 axs[1,3].text(9,-600,'2040',fontsize=12,weight='bold')
@@ -217,16 +214,16 @@ axs[1,3].text(9,-600,'2040',fontsize=12,weight='bold')
 
 ##positivos
 axs[2,2].bar(adry50['hora'], adry50['Fosil'], color='#A1150B')
-axs[2,2].bar(adry50['hora'], adry50['Solar'], bottom=adry30['Fosil'], color='#FBAA1B')
-axs[2,2].bar(adry50['hora'], adry50['Eolica'], bottom=adry30['Fosil']+adry50['Solar'], color='#8FC73E')
-axs[2,2].bar(adry50['hora'], adry50['Hidro'], bottom=adry30['Fosil']+adry50['Solar']+adry50['Eolica'], color='#207653')
+axs[2,2].bar(adry50['hora'], adry50['Solar'], bottom=adry50['Fosil'], color='#FBAA1B')
+axs[2,2].bar(adry50['hora'], adry50['Eolica'], bottom=adry50['Fosil']+adry50['Solar'], color='#8FC73E')
+axs[2,2].bar(adry50['hora'], adry50['Hidro'], bottom=adry50['Fosil']+adry50['Solar']+adry50['Eolica'], color='#207653')
 axs[2,2].axhline(linewidth=1, color='black')
 
 ##negativos
 axs[2,2].bar(adry50['hora'], adry50['Fosiln'], color='#A1150B')
-axs[2,2].bar(adry50['hora'], adry50['Solarn'], bottom=adry30['Fosiln'], color='#FBAA1B')
-axs[2,2].bar(adry50['hora'], adry50['Eolican'], bottom=adry30['Fosiln']+adry50['Solarn'], color='#8FC73E')
-axs[2,2].bar(adry50['hora'], adry50['Hidron'], bottom=adry30['Fosiln']+adry50['Solarn']+adry50['Eolican'], color='#207653')
+axs[2,2].bar(adry50['hora'], adry50['Solarn'], bottom=adry50['Fosiln'], color='#FBAA1B')
+axs[2,2].bar(adry50['hora'], adry50['Eolican'], bottom=adry50['Fosiln']+adry50['Solarn'], color='#8FC73E')
+axs[2,2].bar(adry50['hora'], adry50['Hidron'], bottom=adry50['Fosiln']+adry50['Solarn']+adry50['Eolican'], color='#207653')
 # ~ axs[2,2].set_ylim(-650, 200)
 # ~ axs[1,0].set_title('Estación seca \n (may-oct)', fontsize = 16)
 axs[2,2].yaxis.set_tick_params(labelsize=12)
@@ -236,7 +233,7 @@ axs[2,2].set_xlabel('horas', fontsize=14)
 
 ##positivos
 axs[2,3].bar(awet50['hora'], awet50['Fosil'], color='#A1150B')
-axs[2,2].bar(adry50['hora'], awet50['Solar'], bottom=adry30['Fosil'], color='#FBAA1B')
+axs[2,3].bar(adry50['hora'], awet50['Solar'], bottom=adry30['Fosil'], color='#FBAA1B')
 axs[2,3].bar(awet50['hora'], awet50['Eolica'], bottom=awet30['Fosil']+awet50['Solar'], color='#8FC73E')
 axs[2,3].bar(awet50['hora'], awet50['Hidro'], bottom=awet30['Fosil']+awet50['Solar']+awet50['Eolica'], color='#207653')
 axs[2,3].axhline(linewidth=1, color='black')
@@ -255,7 +252,7 @@ axs[2,3].text(9,-600,'2050',fontsize=12,weight='bold')
 
 fig.subplots_adjust(wspace=0.1, hspace=0.1)
 # ~ plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0.)
-fig.text(.24, 0.97, 'Escenario Tendencial', va='center' ,fontsize=16, weight='bold')  
-fig.text(.6, 0.97, 'Escenario Alternativo', va='center' ,fontsize=16, weight='bold')  
+fig.text(.26, 0.97, 'TEN - (TEN-GD)', va='center' ,fontsize=16, weight='bold')  
+fig.text(.66, 0.97, 'ALT - (ALT-GD)', va='center' ,fontsize=16, weight='bold')  
 
 plt.savefig('Pow2.svg', dpi=300, bbox_inches="tight")
